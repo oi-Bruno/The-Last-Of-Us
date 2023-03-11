@@ -1,0 +1,101 @@
+body{
+    font-family: 'Poppins', sans-serif; /* Altera a fonte do texto*/
+    max-width: 1280px; /* Delimita a largura máxima que o conteúdo pode atingir*/
+    margin: auto; /*centraliza o conteúdo*/
+}
+main:after{
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+    z-index: -1;
+
+}
+.conteudo{
+    display: flex; /* Utilizado para tonar o elemento flex container, podendo manipular os elementos dentro dele com novas propriedade*/
+    flex-direction: column; /* Manipula os elementos dentro da tag pai para ficar em coluna*/
+    min-height: 100vh; /*Delimita a altura do conteúdo. Nesse caso, 100vh é referente à altura total da página*/
+    /* justify-content: center;  Centraliza o conteúdo em linha na página */
+    justify-content: space-evenly; /* Faz a separação dos elementos filhos dentro da tag pai*/
+}
+
+.informacoes .logo{
+    max-width: 350px; /*Delimita a largura máxima que o conteúdo pode atingir*/
+    filter: invert(1); /*Inverte a cor padrão do elemento*/
+    margin-bottom: 80px; /*Delimita a espessura da margem de baixo do elemento*/
+}
+.informacoes .descricao{
+    width: 49%; /*Delimita a largura do conteúdo*/
+    font-size: 24px; /*Delimita o tamanho da fonte do conteúdo*/
+    color: #ffffff;
+    line-height: 30px; /*Delimita a altura da linha. Espaçamento entre as linhas.*/
+}
+.botoes-carrossel{
+    display: flex; /* Utilizado para tonar o elemento flex container, podendo manipular os elementos dentro dele com novas propriedade*/
+    justify-content: center; /* Linha o conteúdo no centro*/
+    gap: 20px; /* Defini o espaço entre as colunas dos elementos*/
+}
+.botoes-carrossel .botao{
+    background-color: #ffffff;
+    width: 15px; /* Define a largura do conteúdo*/
+    height: 15px; /* Define a altura do conteúdo*/
+    border-radius: 50%; /* Arredonda os cantos do conteúdo*/
+    border: 2px solid transparent; /* Define a largura do conteúdo*/
+    cursor: pointer; /*Determina que ao passar o mouse em cima do elemento, o mouse fica expressão de "clicável"*/
+    border-color: #ffffff; /* Define a cor do elemento*/
+}
+
+.botoes-carrossel .botao.selecionado{
+    background-color: #1d8346;
+}
+.menu-lateral{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.menu-lateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.menu-lateral .icone{
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+}
+.menu-lateral .icone:hover{
+    transform: scale(1.2);
+}
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.carrossel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+.carrossel .imagem.ativa{
+    display: block;
+}
+@keyframes mudarImagem{
+    from{
+        opacity: 0.85;
+    }
+    to{
+        opacity: 1;
+    }
+}
